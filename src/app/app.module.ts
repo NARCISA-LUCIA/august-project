@@ -10,13 +10,18 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {CompanyService} from "./service/company-service";
+import { UpdateCompanyComponent } from './company-page/update-company/update-company.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         CompanyPageComponent,
-        CreateCompanyComponent
+        CreateCompanyComponent,
+        UpdateCompanyComponent
     ],
     imports: [
         BrowserModule,
@@ -26,8 +31,10 @@ import {MatButtonModule} from '@angular/material/button';
         MatInputModule,
         MatIconModule,
         MatButtonModule,
+        ReactiveFormsModule,
+        HttpClientModule,
     ],
-    providers: [],
+    providers: [HttpClient, CompanyService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
