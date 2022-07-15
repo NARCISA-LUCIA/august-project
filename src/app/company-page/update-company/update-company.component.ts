@@ -1,15 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {CompanyService} from "../../service/company-service";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {CompanyService} from "../../service/company-service";
 import {Company} from "../../model/company";
 
-
 @Component({
-    selector: 'app-create-company',
-    templateUrl: './create-company.component.html',
-    styleUrls: ['./create-company.component.css']
+    selector: 'app-update-company',
+    templateUrl: './update-company.component.html',
+    styleUrls: ['./update-company.component.css']
 })
-export class CreateCompanyComponent implements OnInit {
+export class UpdateCompanyComponent implements OnInit {
     formControlGroup: FormGroup = this.formBuilder.group({
         address: new FormControl(''),
         city: new FormControl(''),
@@ -25,19 +24,28 @@ export class CreateCompanyComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private companyService: CompanyService,
-    ) {
+        private companyService: CompanyService,) {
     }
 
     ngOnInit(): void {
         this.companyService.get(2).subscribe(result => {
             console.log(result);
+            this.formControlGroup = this.formBuilder.group({
+                address: new FormControl(result.address),
+                city: new FormControl(result.city),
+                country: new FormControl(result.country),
+                email: new FormControl(result.email),
+                name: new FormControl(result.name),
+                phone: new FormControl(result.phone),
+                registrationNumber: new FormControl(result.registrationNumber),
+                vatNumber: new FormControl(result.vatNumber),
+            });
         });
     }
 
-    createCompany() {
+    updateCompany() {
         console.log("Form = ", this.formControlGroup.getRawValue())
-        let company: Company = new Company();
+        let company:Company = new Company();
         company.address = this.formControlGroup.controls["address"].value;
         company.name = this.formControlGroup.controls["name"].value;
         company.city = this.formControlGroup.controls["city"].value;
@@ -47,12 +55,12 @@ export class CreateCompanyComponent implements OnInit {
         company.registrationNumber = this.formControlGroup.controls["registrationNumber"].value;
         company.vatNumber = this.formControlGroup.controls["vatNumber"].value;
 
-        this.companyService.create(company).subscribe((result: Company) => {
+
+        this.companyService.update(company).subscribe((result: Company) => {
             if (result) {
                 console.log("result = ", result)
             }
         });
     }
+
 }
-
-
