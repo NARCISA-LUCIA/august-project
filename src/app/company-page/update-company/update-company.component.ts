@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {CompanyService} from "../../service/company-service";
 import {Company} from "../../model/company";
+import {ActivatedRoute} from "@angular/router";
+
 
 @Component({
     selector: 'app-update-company',
@@ -9,6 +11,7 @@ import {Company} from "../../model/company";
     styleUrls: ['./update-company.component.css']
 })
 export class UpdateCompanyComponent implements OnInit {
+    currentCompany: Company;
     formControlGroup: FormGroup = this.formBuilder.group({
         address: new FormControl(''),
         city: new FormControl(''),
@@ -24,12 +27,18 @@ export class UpdateCompanyComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private companyService: CompanyService,) {
+        private companyService: CompanyService,
+        private route: ActivatedRoute) {
     }
 
     ngOnInit(): void {
-        this.companyService.get(2).subscribe(result => {
+        this.companyService.getAll().subscribe(result => {
+            console.log("Get all = ", result);
+        })
+        let companyId = this.route.snapshot.params['id'];
+        this.companyService.get(companyId).subscribe(result => {
             console.log(result);
+            this.currentCompany = result;
             this.formControlGroup = this.formBuilder.group({
                 address: new FormControl(result.address),
                 city: new FormControl(result.city),
@@ -45,7 +54,8 @@ export class UpdateCompanyComponent implements OnInit {
 
     updateCompany() {
         console.log("Form = ", this.formControlGroup.getRawValue())
-        let company:Company = new Company();
+        let company: Company = new Company();
+        company.id = this.currentCompany.id;
         company.address = this.formControlGroup.controls["address"].value;
         company.name = this.formControlGroup.controls["name"].value;
         company.city = this.formControlGroup.controls["city"].value;
