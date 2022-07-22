@@ -8,6 +8,7 @@
 .registration-company {
     display: flex;
     flex-direction: column;
+
 }
 
 h2 {
@@ -55,6 +56,7 @@ mat-form-field {
 
 .form {
     height: 65px;
+
 }
 
 .button-save {
