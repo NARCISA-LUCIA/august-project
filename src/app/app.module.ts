@@ -13,8 +13,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {CompanyService} from "./service/company-service";
-import { UpdateCompanyComponent } from './company-page/update-company/update-company.component';
-
+import {UpdateCompanyComponent} from './company-page/update-company/update-company.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
     declarations: [
@@ -33,6 +35,9 @@ import { UpdateCompanyComponent } from './company-page/update-company/update-com
         MatButtonModule,
         ReactiveFormsModule,
         HttpClientModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatTableModule,
     ],
     providers: [HttpClient, CompanyService],
     bootstrap: [AppComponent]

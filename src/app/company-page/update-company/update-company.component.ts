@@ -54,11 +54,6 @@ export class UpdateCompanyComponent implements OnInit {
         company.vatNumber = this.formControlGroup.controls["vatNumber"].value;
 
 
-        this.companyService.update(company).subscribe((result: Company) => {
-            if (result) {
-                console.log("result = ", result)
-            }
-        });
     }
 
 }
