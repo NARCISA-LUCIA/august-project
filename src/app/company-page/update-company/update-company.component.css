@@ -1,13 +1,45 @@
 .main-container {
+    margin: 0 auto;
     display: flex;
-    padding: 40px;
-    margin-left: 10%;
-    margin-top: 25px;
+    padding: 30px;
+    height: 720px;
 }
 
 .registration-company {
     display: flex;
     flex-direction: column;
+}
+
+.form-container {
+    background: white;
+    padding: 40px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.image-green {
+    background-image: url("../../../assets/login-form-design-green.jpg");
+    background-size: cover;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    width: 400px;
+}
+
+h1 {
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    font-size: 40px;
+    text-align: start;
+    margin: 50px;
+    font-family: auto;
+}
+
+.header-welcome {
+    text-transform: none;
+    font-family: sans-serif;
+    letter-spacing: 1.6px;
 }
 
 h2 {
@@ -16,8 +48,9 @@ h2 {
     text-align: center;
     letter-spacing: 0.8px;
     font-size: 24px;
-    border-radius: 3px;
+    border-radius: 30px;
     margin-bottom: 40px;
+    padding: 5px;
 }
 
 .form-container {
@@ -27,12 +60,12 @@ h2 {
 
 ::ng-deep .mat-focused .mat-form-field-label {
     /*change color of label*/
-    color: white !important;
+    color: black !important;
 }
 
 ::ng-deep.mat-form-field-underline {
     /*change color of underline*/
-    background-color: white !important;
+    background-color: black !important;
 }
 
 ::ng-deep.mat-form-field-ripple {
@@ -45,11 +78,11 @@ mat-label {
 }
 
 mat-icon {
-    color: white;
+    color: orange;
 }
 
 mat-form-field {
-    color: white;
+    color: black;
     width: 400px;
 }
 
@@ -66,4 +99,5 @@ button {
     width: 40%;
     margin-top: 20px;
     text-transform: uppercase;
+    border-radius: 30px;
 }

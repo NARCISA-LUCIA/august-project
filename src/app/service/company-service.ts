@@ -26,6 +26,11 @@ export class CompanyService {
         return this.httpClient.get<Company>(url);
     }
 
+    getAll():Observable<Company[]>{
+        const url = "/api/company/all";
+        return this.httpClient.get<Company[]>(url);
+    }
+
     update(company: Company): Observable<Company> {
         let headerList = new HttpHeaders({'Content-Type': 'application/json'});
         return this.httpClient.put<Company>(
