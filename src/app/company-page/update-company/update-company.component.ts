@@ -21,8 +21,6 @@ export class UpdateCompanyComponent implements OnInit {
         phone: new FormControl(''),
         registrationNumber: new FormControl(''),
         vatNumber: new FormControl(''),
-
-
     });
 
     constructor(
@@ -64,8 +62,5 @@ export class UpdateCompanyComponent implements OnInit {
         company.phone = this.formControlGroup.controls["phone"].value;
         company.registrationNumber = this.formControlGroup.controls["registrationNumber"].value;
         company.vatNumber = this.formControlGroup.controls["vatNumber"].value;
-
-
     }
-
 }

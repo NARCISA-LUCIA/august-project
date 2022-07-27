@@ -6,8 +6,7 @@ import {Observable} from "rxjs";
 @Injectable()
 export class CompanyService {
     constructor(
-        private httpClient: HttpClient
-
+        private httpClient: HttpClient,
     ) {
     }
 
@@ -17,16 +16,16 @@ export class CompanyService {
             "/api/company",
             company,
             {
-            headers: headerList,
-        });
+                headers: headerList,
+            });
     }
 
-   get(id:number):Observable<Company>{
-       const url = "/api/company/"+id;
+    get(id: number): Observable<Company> {
+        const url = "/api/company/" + id;
         return this.httpClient.get<Company>(url);
     }
 
-    getAll():Observable<Company[]>{
+    getAll(): Observable<Company[]> {
         const url = "/api/company/all";
         return this.httpClient.get<Company[]>(url);
     }

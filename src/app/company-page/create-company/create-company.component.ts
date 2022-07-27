@@ -24,12 +24,12 @@ export class CreateCompanyComponent implements OnInit {
     });
 
     constructor(
-        private formBuilder: FormBuilder,
-        private companyService: CompanyService,
+    private formBuilder: FormBuilder,
+            private companyService: CompanyService,
     ) {
-    }
+        }
 
-    ngOnInit(): void {
+        ngOnInit(): void {
         this.companyService.get(2).subscribe(result => {
             console.log(result);
         });
