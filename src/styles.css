@@ -2,6 +2,7 @@
 
 html, body {
     height: 100%;
+
 }
 
 body {
@@ -9,7 +10,7 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     background-image: linear-gradient(to right, yellow, green);
     background-size: cover;
-    display: flex;
+    /*display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;*/
 }

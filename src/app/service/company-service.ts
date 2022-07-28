@@ -39,4 +39,9 @@ export class CompanyService {
                 headers: headerList,
             });
     }
+
+    delete(id: number): Observable<void>{
+        const url = "/api/company/" + id;
+        return this.httpClient.delete<void>(url);
+    }
 }

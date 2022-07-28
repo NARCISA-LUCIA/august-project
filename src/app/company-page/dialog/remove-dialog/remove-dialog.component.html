@@ -1,0 +1,3 @@
+<p>Are you sure you want to remove company {{data.name}}?</p>
+<button mat-raised-button (click) = "onCancel()">Cancel</button>
+<button mat-raised-button color="warn" [mat-dialog-close]="data">Delete</button>

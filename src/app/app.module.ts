@@ -17,13 +17,16 @@ import {UpdateCompanyComponent} from './company-page/update-company/update-compa
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
+import { RemoveDialogComponent } from './company-page/dialog/remove-dialog/remove-dialog.component';
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
     declarations: [
         AppComponent,
         CompanyPageComponent,
         CreateCompanyComponent,
-        UpdateCompanyComponent
+        UpdateCompanyComponent,
+        RemoveDialogComponent
     ],
     imports: [
         BrowserModule,
@@ -38,6 +41,7 @@ import {MatTableModule} from '@angular/material/table';
         MatPaginatorModule,
         MatSortModule,
         MatTableModule,
+        MatDialogModule,
     ],
     providers: [HttpClient, CompanyService],
     bootstrap: [AppComponent]
