@@ -1,3 +1,17 @@
-table{
-    width:100%;
+table {
+    width: 1200px;
 }
+
+.demo-button {
+    margin-bottom: 5px;
+}
+
+.cursor-pointer:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+::ng-deep.mat-tooltip {
+    font-size: 14px;
+}
+
