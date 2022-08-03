@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "company-projects": {
+    "august-project": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/company-projects",
+            "outputPath": "dist/august-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "company-projects:build:production"
+              "browserTarget": "august-project:build:production"
             },
             "development": {
-              "browserTarget": "company-projects:build:development"
+              "browserTarget": "august-project:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "company-projects:build"
+            "browserTarget": "august-project:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "company-projects"
+  "defaultProject": "august-project"
 }

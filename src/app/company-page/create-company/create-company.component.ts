@@ -3,7 +3,6 @@ import {CompanyService} from "../../service/company-service";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {Company} from "../../model/company";
 
-
 @Component({
     selector: 'app-create-company',
     templateUrl: './create-company.component.html',
@@ -19,17 +18,15 @@ export class CreateCompanyComponent implements OnInit {
         phone: new FormControl(''),
         registrationNumber: new FormControl(''),
         vatNumber: new FormControl(''),
-
-
     });
 
     constructor(
-    private formBuilder: FormBuilder,
-            private companyService: CompanyService,
+        private formBuilder: FormBuilder,
+        private companyService: CompanyService,
     ) {
-        }
+    }
 
-        ngOnInit(): void {
+    ngOnInit(): void {
         this.companyService.get(2).subscribe(result => {
             console.log(result);
         });
