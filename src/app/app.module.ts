@@ -19,6 +19,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import { RemoveDialogComponent } from './company-page/dialog/remove-dialog/remove-dialog.component';
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
     declarations: [
@@ -42,6 +43,7 @@ import {MatDialog, MatDialogModule} from "@angular/material/dialog";
         MatSortModule,
         MatTableModule,
         MatDialogModule,
+        MatTooltipModule,
     ],
     providers: [HttpClient, CompanyService],
     bootstrap: [AppComponent]

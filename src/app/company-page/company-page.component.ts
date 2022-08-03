@@ -36,7 +36,7 @@ export class CompanyPageComponent implements OnInit {
         const name = data.name;
         const dialogRef = this.dialog.open(RemoveDialogComponent, {
             data: {
-              name
+                name
             }
         });
 
