@@ -1,0 +1,54 @@
+
+h1 {
+    text-align: center;
+    background: -webkit-linear-gradient(yellow, orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form {
+    background: white;
+    border-radius: 10px;
+    width: 500px;
+    padding: 20px;
+}
+
+.form-box {
+    row-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+    align-items: center;
+    justify-content: center;
+    background: #505050;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.button-submit {
+    text-align: center;
+}
+
+button {
+    background-image: linear-gradient(to right, yellow, orange);
+    width: 100px;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: black !important;
+}
+
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-image: linear-gradient(to right, orange, green) !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: orange !important;
+}

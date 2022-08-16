@@ -1,0 +1,19 @@
+<div class="form-box">
+    <h1>Project Description Form</h1>
+    <div class="form" [formGroup]="formControlGroup">
+        <mat-form-field class="form-width" appearance="legacy">
+            <mat-label>Project Name</mat-label>
+            <input matInput placeholder="" formControlName="name">
+            <mat-icon matSuffix>location_city</mat-icon>
+        </mat-form-field>
+    </div>
+    <div class="form" [formGroup]="formControlGroup">
+        <mat-form-field appearance="legacy">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+    </div>
+    <div class="button-submit">
+        <button mat-raised-button (click) = "createProject()">Submit</button>
+    </div>
+</div>

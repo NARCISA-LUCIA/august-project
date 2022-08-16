@@ -1,0 +1,13 @@
+table {
+    width: 800px;
+}
+
+.add-project-button {
+    margin-bottom: 5px;
+}
+
+.cursor-pointer:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
