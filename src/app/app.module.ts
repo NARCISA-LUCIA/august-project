@@ -20,6 +20,7 @@ import {MatTableModule} from '@angular/material/table';
 import { RemoveDialogComponent } from './company-page/dialog/remove-dialog/remove-dialog.component';
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { UserPageComponent } from './user-page/user-page.component';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
         CompanyPageComponent,
         CreateCompanyComponent,
         UpdateCompanyComponent,
-        RemoveDialogComponent
+        RemoveDialogComponent,
+        UserPageComponent
     ],
     imports: [
         BrowserModule,
