@@ -9,3 +9,5 @@ export class Company {
     registrationNumber: string;
     vatNumber: string;
 }
+
+

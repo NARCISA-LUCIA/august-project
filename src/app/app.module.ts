@@ -21,6 +21,11 @@ import { RemoveDialogComponent } from './company-page/dialog/remove-dialog/remov
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { UserPageComponent } from './user-page/user-page.component';
+import { ProjectPageComponent } from './project-page/project-page.component';
+import { CreateProjectComponent } from './project-page/create-project/create-project.component';
+import {ProjectService} from "./service/project-service";
+import { UpdateProjectComponent } from './project-page/update-project/update-project.component';
+import { RemoveDialogProjectComponent } from './project-page/dialog/remove-dialog-project/remove-dialog-project.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +34,11 @@ import { UserPageComponent } from './user-page/user-page.component';
         CreateCompanyComponent,
         UpdateCompanyComponent,
         RemoveDialogComponent,
-        UserPageComponent
+        UserPageComponent,
+        ProjectPageComponent,
+        CreateProjectComponent,
+        UpdateProjectComponent,
+        RemoveDialogProjectComponent
     ],
     imports: [
         BrowserModule,
@@ -47,7 +56,7 @@ import { UserPageComponent } from './user-page/user-page.component';
         MatDialogModule,
         MatTooltipModule,
     ],
-    providers: [HttpClient, CompanyService],
+    providers: [HttpClient, CompanyService, ProjectService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
