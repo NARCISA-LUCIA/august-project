@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ProjectService } from '../../service/project-service';
 import { Project } from '../../model/project';
 import { Company } from '../../model/company';
+import { Location} from '@angular/common';
 
 @Component({
   selector: 'app-create-project',
@@ -17,7 +18,8 @@ export class CreateProjectComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private projectService: ProjectService
+    private projectService: ProjectService,
+    private location: Location,
   ) {}
 
   ngOnInit(): void {}
@@ -34,5 +36,9 @@ export class CreateProjectComponent implements OnInit {
         console.log('result = ', result);
       }
     });
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

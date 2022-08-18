@@ -1,0 +1,16 @@
+table {
+    width: 800px;
+}
+
+.add-user-button {
+    margin-bottom: 5px;
+}
+
+.cursor-pointer:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.spacer {
+    flex: 1 1 auto;
+  }

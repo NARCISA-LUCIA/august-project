@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
+import { Location } from '@angular/common';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -26,7 +27,12 @@ import { CreateProjectComponent } from './project-page/create-project/create-pro
 import {ProjectService} from "./service/project-service";
 import { UpdateProjectComponent } from './project-page/update-project/update-project.component';
 import { RemoveDialogProjectComponent } from './project-page/dialog/remove-dialog-project/remove-dialog-project.component';
-
+import { CreateUserComponent } from './user-page/create-user/create-user.component';
+import { UserService } from './service/user-service';
+import { RemoveDialogUserComponent } from './user-page/dialog/remove-dialog-user/remove-dialog-user.component';
+import { UpdateUserComponent } from './user-page/update-user/update-user.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
     declarations: [
         AppComponent,
@@ -38,7 +44,10 @@ import { RemoveDialogProjectComponent } from './project-page/dialog/remove-dialo
         ProjectPageComponent,
         CreateProjectComponent,
         UpdateProjectComponent,
-        RemoveDialogProjectComponent
+        RemoveDialogProjectComponent,
+        CreateUserComponent,
+        RemoveDialogUserComponent,
+        UpdateUserComponent
     ],
     imports: [
         BrowserModule,
@@ -55,8 +64,10 @@ import { RemoveDialogProjectComponent } from './project-page/dialog/remove-dialo
         MatTableModule,
         MatDialogModule,
         MatTooltipModule,
+        MatToolbarModule,
+        MatMenuModule,
     ],
-    providers: [HttpClient, CompanyService, ProjectService],
+    providers: [HttpClient, CompanyService, ProjectService, UserService, Location],
     bootstrap: [AppComponent]
 })
 export class AppModule {

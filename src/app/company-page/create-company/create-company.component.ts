@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {CompanyService} from "../../service/company-service";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {Company} from "../../model/company";
+import { Company } from "../../model/company";
+import { Location} from '@angular/common';
 
 @Component({
     selector: 'app-create-company',
@@ -23,6 +24,7 @@ export class CreateCompanyComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private companyService: CompanyService,
+        private location: Location,
     ) {
     }
 
@@ -49,6 +51,10 @@ export class CreateCompanyComponent implements OnInit {
                 console.log("result = ", result)
             }
         });
+    }
+
+    goBack() {
+        this.location.back();
     }
 }
 
