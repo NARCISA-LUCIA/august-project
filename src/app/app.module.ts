@@ -33,6 +33,7 @@ import { RemoveDialogUserComponent } from './user-page/dialog/remove-dialog-user
 import { UpdateUserComponent } from './user-page/update-user/update-user.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
+import { NavigationPageComponent } from './navigation-page/navigation-page.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -47,7 +48,8 @@ import {MatMenuModule} from '@angular/material/menu';
         RemoveDialogProjectComponent,
         CreateUserComponent,
         RemoveDialogUserComponent,
-        UpdateUserComponent
+        UpdateUserComponent,
+        NavigationPageComponent,
     ],
     imports: [
         BrowserModule,

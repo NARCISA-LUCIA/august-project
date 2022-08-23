@@ -10,6 +10,7 @@ import { CreateProjectComponent } from './project-page/create-project/create-pro
 import { UpdateProjectComponent } from './project-page/update-project/update-project.component';
 import { CreateUserComponent } from './user-page/create-user/create-user.component';
 import { UpdateUserComponent } from './user-page/update-user/update-user.component';
+import { NavigationPageComponent } from './navigation-page/navigation-page.component';
 
 const routes: Routes = [
   { path: 'company/create', component: CreateCompanyComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'user', component: UserPageComponent },
   { path: 'user/create', component: CreateUserComponent },
   { path: 'user/:id/update', component: UpdateUserComponent },
+  { path: 'navigation', component: NavigationPageComponent },
 ];
 
 @NgModule({
