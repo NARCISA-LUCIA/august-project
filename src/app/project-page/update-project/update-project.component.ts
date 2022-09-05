@@ -3,7 +3,6 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ProjectService } from '../../service/project-service';
 import { ActivatedRoute } from '@angular/router';
 import { Project } from '../../model/project';
-import { ThisReceiver } from '@angular/compiler';
 import { Location } from '@angular/common';
 
 @Component({

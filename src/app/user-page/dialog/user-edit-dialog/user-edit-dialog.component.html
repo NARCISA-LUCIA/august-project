@@ -1,0 +1,5 @@
+<p>Are you sure you want to edit user {{data.user.firstName}}?</p>
+<div class="button-box-remove">
+    <button mat-raised-button (click)="onCancel()">Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="data">Update</button>
+</div>

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { Observable } from 'rxjs';
 import { User } from '../model/user';
 import { UserService } from '../service/user-service';
 import { RemoveDialogUserComponent } from './dialog/remove-dialog-user/remove-dialog-user.component';
+import { UserEditDialogComponent } from './dialog/user-edit-dialog/user-edit-dialog.component';
 
 @Component({
   selector: 'app-user-page',
@@ -18,6 +18,7 @@ export class UserPageComponent implements OnInit {
     'lastName',
     'email',
     'remove',
+    'openNewTab'
   ];
   users: User[];
   dataSource: MatTableDataSource<User>;
@@ -55,6 +56,33 @@ export class UserPageComponent implements OnInit {
             this.dataSource._updateChangeSubscription();
           },
           () => console.log('User was not removed')
+        );
+      }
+    });
+  }
+
+  openNewTab(data: User) {
+    const userUrl = "/user/"+ data.id +"/update" ;
+    window.open(userUrl);
+    
+  } 
+
+  openUserEditDialog(user: User): void {
+    const dialogRef = this.dialog.open(UserEditDialogComponent, {
+      data: {
+        user,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(' Dialog closed ' + result.user.firstName);
+      if (result != null) {
+        this.userService.update(result.user).subscribe(
+          () => {
+            console.log('User was updated');
+        
+          },
+          () => console.log('User was not updated')
         );
       }
     });

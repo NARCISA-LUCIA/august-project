@@ -1,3 +1,4 @@
+
 import {NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Location } from '@angular/common';
@@ -34,6 +35,14 @@ import { UpdateUserComponent } from './user-page/update-user/update-user.compone
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import { NavigationPageComponent } from './navigation-page/navigation-page.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { UserEditDialogComponent } from './user-page/dialog/user-edit-dialog/user-edit-dialog.component';
+import { FeaturePageComponent } from './feature-page/feature-page.component';
+import { CreateFeatureComponent } from './feature-page/create-feature/create-feature.component';
+import { UpdateFeatureComponent } from './feature-page/update-feature/update-feature.component';
+import { FeatureEditDialogComponent } from './feature-page/dialog/feature-edit-dialog/feature-edit-dialog.component';
+import { FeatureService } from './service/feature-service'; 
+    
 @NgModule({
     declarations: [
         AppComponent,
@@ -50,6 +59,11 @@ import { NavigationPageComponent } from './navigation-page/navigation-page.compo
         RemoveDialogUserComponent,
         UpdateUserComponent,
         NavigationPageComponent,
+        UserEditDialogComponent,
+        FeaturePageComponent,
+        CreateFeatureComponent,
+        UpdateFeatureComponent,
+        FeatureEditDialogComponent,
     ],
     imports: [
         BrowserModule,
@@ -68,8 +82,10 @@ import { NavigationPageComponent } from './navigation-page/navigation-page.compo
         MatTooltipModule,
         MatToolbarModule,
         MatMenuModule,
+        MatSidenavModule,
     ],
-    providers: [HttpClient, CompanyService, ProjectService, UserService, Location],
+    
+    providers: [HttpClient, CompanyService, ProjectService, UserService, Location, FeatureService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

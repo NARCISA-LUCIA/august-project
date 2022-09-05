@@ -1,0 +1,5 @@
+<p>Are you sure you want to remove feature {{data.title}}?</p>
+<div class="button-box-remove">
+    <button mat-raised-button (click)="onCancel()">Cancel</button>
+    <button mat-raised-button color="warn" [mat-dialog-close]="data">Delete</button>
+</div>
