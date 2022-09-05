@@ -51,3 +51,8 @@ button {
     /*change color of underline when focused*/
     background-color: orange !important;
 }
+
+.buttons{
+    display: flex;
+    column-gap: 30px;
+}

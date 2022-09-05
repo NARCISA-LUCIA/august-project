@@ -1,4 +1,3 @@
-
 h1 {
     text-align: center;
     background: -webkit-linear-gradient(yellow, orange);
@@ -29,13 +28,13 @@ mat-form-field {
     width: 100%;
 }
 
-.button-submit {
+.button-update-user {
     text-align: center;
 }
 
 button {
     background-image: linear-gradient(to right, yellow, orange);
-    width: 100px;
+    width: 120px;
 }
 
 ::ng-deep .mat-focused .mat-form-field-label {
@@ -52,7 +51,6 @@ button {
     /*change color of underline when focused*/
     background-color: orange !important;
 }
-
 .buttons{
     display: flex;
     column-gap: 30px;

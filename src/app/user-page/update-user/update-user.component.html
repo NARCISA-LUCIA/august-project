@@ -1,0 +1,33 @@
+
+<div class="form-box">
+    <h1>Update User</h1>
+    <div class="form" [formGroup]="formControlGroup">
+        <mat-form-field class="form-width" appearance="legacy">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="" formControlName="firstName">
+            <mat-icon matSuffix>account_circle</mat-icon>
+        </mat-form-field>
+    </div>
+    <div class="form" [formGroup]="formControlGroup">
+        <mat-form-field class="form-width" appearance="legacy">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="" formControlName="lastName">
+            <mat-icon matSuffix>account_circle</mat-icon>
+        </mat-form-field>
+    </div>
+    <div class="form" [formGroup]="formControlGroup">
+        <mat-form-field class="form-width" appearance="legacy">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="" formControlName="email">
+            <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+    </div>
+    <div class = "buttons">
+    <div class="button-update-user">
+        <button mat-raised-button (click) = "updateUser()">Update User</button>
+    </div>
+    <div class="button-back-user">
+        <button mat-raised-button (click) = "goBack()">Back</button>
+    </div>
+    </div>
+</div>

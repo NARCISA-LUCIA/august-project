@@ -1,8 +1,8 @@
 table {
-    width: 1200px;
+    width: 800px;
 }
 
-.add-company-button {
+.add-user-button {
     margin-bottom: 5px;
 }
 
@@ -11,6 +11,6 @@ table {
     cursor: pointer;
 }
 
-::ng-deep.mat-tooltip {
-    font-size: 14px;
-}
+.spacer {
+    flex: 1 1 auto;
+  }

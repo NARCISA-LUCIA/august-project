@@ -102,3 +102,8 @@ button {
     text-transform: uppercase;
     border-radius: 30px;
 }
+
+.buttons{
+    display: flex;
+    column-gap: 30px;
+}

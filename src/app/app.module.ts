@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
+import { Location } from '@angular/common';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -20,12 +21,18 @@ import {MatTableModule} from '@angular/material/table';
 import { RemoveDialogComponent } from './company-page/dialog/remove-dialog/remove-dialog.component';
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { UserPageComponent } from './user-page/user-page.component';
 import { ProjectPageComponent } from './project-page/project-page.component';
 import { CreateProjectComponent } from './project-page/create-project/create-project.component';
 import {ProjectService} from "./service/project-service";
 import { UpdateProjectComponent } from './project-page/update-project/update-project.component';
 import { RemoveDialogProjectComponent } from './project-page/dialog/remove-dialog-project/remove-dialog-project.component';
-
+import { CreateUserComponent } from './user-page/create-user/create-user.component';
+import { UserService } from './service/user-service';
+import { RemoveDialogUserComponent } from './user-page/dialog/remove-dialog-user/remove-dialog-user.component';
+import { UpdateUserComponent } from './user-page/update-user/update-user.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
     declarations: [
         AppComponent,
@@ -33,10 +40,14 @@ import { RemoveDialogProjectComponent } from './project-page/dialog/remove-dialo
         CreateCompanyComponent,
         UpdateCompanyComponent,
         RemoveDialogComponent,
+        UserPageComponent,
         ProjectPageComponent,
         CreateProjectComponent,
         UpdateProjectComponent,
-        RemoveDialogProjectComponent
+        RemoveDialogProjectComponent,
+        CreateUserComponent,
+        RemoveDialogUserComponent,
+        UpdateUserComponent
     ],
     imports: [
         BrowserModule,
@@ -53,8 +64,10 @@ import { RemoveDialogProjectComponent } from './project-page/dialog/remove-dialo
         MatTableModule,
         MatDialogModule,
         MatTooltipModule,
+        MatToolbarModule,
+        MatMenuModule,
     ],
-    providers: [HttpClient, CompanyService, ProjectService],
+    providers: [HttpClient, CompanyService, ProjectService, UserService, Location],
     bootstrap: [AppComponent]
 })
 export class AppModule {
