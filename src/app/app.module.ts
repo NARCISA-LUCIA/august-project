@@ -41,7 +41,9 @@ import { FeaturePageComponent } from './feature-page/feature-page.component';
 import { CreateFeatureComponent } from './feature-page/create-feature/create-feature.component';
 import { UpdateFeatureComponent } from './feature-page/update-feature/update-feature.component';
 import { FeatureEditDialogComponent } from './feature-page/dialog/feature-edit-dialog/feature-edit-dialog.component';
-import { FeatureService } from './service/feature-service'; 
+import { FeatureService } from './service/feature-service';
+import { CompanyEditDialogComponent } from './company-page/dialog/company-edit-dialog/company-edit-dialog.component';
+import { ProjectEditDialogComponent } from './project-page/dialog/project-edit-dialog/project-edit-dialog.component'; 
     
 @NgModule({
     declarations: [
@@ -64,6 +66,8 @@ import { FeatureService } from './service/feature-service';
         CreateFeatureComponent,
         UpdateFeatureComponent,
         FeatureEditDialogComponent,
+        CompanyEditDialogComponent,
+        ProjectEditDialogComponent,
     ],
     imports: [
         BrowserModule,

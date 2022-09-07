@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FeatureService } from './../../service/feature-service';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Company } from 'src/app/model/company';
 
 @Component({
   selector: 'app-create-feature',

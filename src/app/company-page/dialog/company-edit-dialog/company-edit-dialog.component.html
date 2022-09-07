@@ -1,0 +1,27 @@
+
+<div class="form" [formGroup]="data.formControlGroup">
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="address">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Country</mat-label>
+        <input matInput formControlName="country">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>registrationNumber</mat-label>
+        <input matInput formControlName="registrationNumber">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>email</mat-label>
+        <input matInput formControlName="email">
+    </mat-form-field>
+    <div class="button-box-remove">
+        <button mat-raised-button (click)="onCancel()">Cancel</button>
+        <button mat-raised-button color="primary" [mat-dialog-close]="data">Update</button>
+    </div>
+</div>

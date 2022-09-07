@@ -5,7 +5,6 @@ import { FeatureService } from './../../service/feature-service';
 import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Project } from "./../../model/project";
 
 @Component({
   selector: 'app-update-feature',

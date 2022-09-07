@@ -10,14 +10,14 @@ export class FeatureEditDialogComponent implements OnInit {
 
   constructor(
     private dialogRef: MatDialogRef<FeatureEditDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data:any,
   ) { }
 
   ngOnInit(): void {
+   
   }
 
   onCancel(): void {
     this.dialogRef.close();
   }
-
 }

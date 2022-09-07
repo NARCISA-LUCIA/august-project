@@ -26,7 +26,7 @@ export class FeatureService {
 
   update(feature: Feature): Observable<Feature> {
     let headerList = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.httpClient.put<Feature>('/api/feature', feature, {
+    return this.httpClient.put<Feature>('/api/feature/', feature, {
       headers: headerList,
     });
   }
