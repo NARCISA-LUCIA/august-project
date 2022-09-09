@@ -79,8 +79,11 @@ export class CompanyPageComponent implements OnInit {
       name: new FormControl(company.name),
       address: new FormControl(company.address),
       country: new FormControl(company.country),
+      city: new FormControl(company.city),
       registrationNumber: new FormControl(company.registrationNumber),
+      vatNumber: new FormControl(company.vatNumber),
       email: new FormControl(company.email),
+      phone: new FormControl(company.phone),
     });
     const dialogRef = this.dialog.open(CompanyEditDialogComponent, {
       data: {
@@ -94,8 +97,11 @@ export class CompanyPageComponent implements OnInit {
         company.name = data.formControlGroup.controls['name'].value;
         company.address = data.formControlGroup.controls['address'].value;
         company.country = data.formControlGroup.controls['country'].value;
+        company.city = data.formControlGroup.controls['city'].value;
         company.registrationNumber = data.formControlGroup.controls['registrationNumber'].value;
+        company.vatNumber = data.formControlGroup.controls['vatNumber'].value;
         company.email = data.formControlGroup.controls['email'].value;
+        company.phone = data.formControlGroup.controls['phone'].value;
 
         this.companyService.update(company).subscribe(
           () => {

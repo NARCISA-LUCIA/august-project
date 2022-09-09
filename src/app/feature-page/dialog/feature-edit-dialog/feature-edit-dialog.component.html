@@ -1,15 +1,28 @@
-
 <div class="form" [formGroup]="data.formControlGroup">
-    <mat-form-field appearance="outline">
-        <mat-label>Title</mat-label>
-        <input matInput formControlName="title">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Description</mat-label>
-        <textarea matInput formControlName="description"></textarea>
-    </mat-form-field>
-    <div class="button-box-remove">
-        <button mat-raised-button (click)="onCancel()">Cancel</button>
-        <button mat-raised-button color="primary" [mat-dialog-close]="data">Update</button>
+    <div class="form-left-container">
+        <div class="form-left">
+            <mat-form-field appearance="outline">
+                <mat-label>Title</mat-label>
+                <input matInput formControlName="title">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="button-box-remove">
+            <button mat-raised-button (click)="onCancel()">Cancel</button>
+            <button mat-raised-button color="primary" [mat-dialog-close]="data">Update</button>
+        </div>
+    </div>
+    <div class="dropdown-right">
+        <mat-form-field appearance="outline">
+            <mat-label>Choose an option</mat-label>
+            <mat-select>
+                <mat-option *ngFor='let user of users' [value]='user'>
+                    {{user.firstName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
     </div>
 </div>

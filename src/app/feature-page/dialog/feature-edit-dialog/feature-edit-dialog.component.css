@@ -7,10 +7,20 @@ button.mat-raised-button {
   width: 100px;
   padding: 4px;
 }
+
 .form {
   display: flex;
+  gap: 20px;
+}
+
+.form-left {
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
+}
+
+.form-left-container {
+  display: flex;
+  flex-direction: column;
   width: 700px;
 }
 

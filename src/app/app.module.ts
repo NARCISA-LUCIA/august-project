@@ -43,7 +43,8 @@ import { UpdateFeatureComponent } from './feature-page/update-feature/update-fea
 import { FeatureEditDialogComponent } from './feature-page/dialog/feature-edit-dialog/feature-edit-dialog.component';
 import { FeatureService } from './service/feature-service';
 import { CompanyEditDialogComponent } from './company-page/dialog/company-edit-dialog/company-edit-dialog.component';
-import { ProjectEditDialogComponent } from './project-page/dialog/project-edit-dialog/project-edit-dialog.component'; 
+import { ProjectEditDialogComponent } from './project-page/dialog/project-edit-dialog/project-edit-dialog.component';
+import {MatSelectModule} from '@angular/material/select';
     
 @NgModule({
     declarations: [
@@ -87,6 +88,7 @@ import { ProjectEditDialogComponent } from './project-page/dialog/project-edit-d
         MatToolbarModule,
         MatMenuModule,
         MatSidenavModule,
+        MatSelectModule,
     ],
     
     providers: [HttpClient, CompanyService, ProjectService, UserService, Location, FeatureService],
