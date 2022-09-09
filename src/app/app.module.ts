@@ -1,3 +1,4 @@
+
 import {NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Location } from '@angular/common';
@@ -33,6 +34,18 @@ import { RemoveDialogUserComponent } from './user-page/dialog/remove-dialog-user
 import { UpdateUserComponent } from './user-page/update-user/update-user.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
+import { NavigationPageComponent } from './navigation-page/navigation-page.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { UserEditDialogComponent } from './user-page/dialog/user-edit-dialog/user-edit-dialog.component';
+import { FeaturePageComponent } from './feature-page/feature-page.component';
+import { CreateFeatureComponent } from './feature-page/create-feature/create-feature.component';
+import { UpdateFeatureComponent } from './feature-page/update-feature/update-feature.component';
+import { FeatureEditDialogComponent } from './feature-page/dialog/feature-edit-dialog/feature-edit-dialog.component';
+import { FeatureService } from './service/feature-service';
+import { CompanyEditDialogComponent } from './company-page/dialog/company-edit-dialog/company-edit-dialog.component';
+import { ProjectEditDialogComponent } from './project-page/dialog/project-edit-dialog/project-edit-dialog.component';
+import {MatSelectModule} from '@angular/material/select';
+    
 @NgModule({
     declarations: [
         AppComponent,
@@ -47,7 +60,15 @@ import {MatMenuModule} from '@angular/material/menu';
         RemoveDialogProjectComponent,
         CreateUserComponent,
         RemoveDialogUserComponent,
-        UpdateUserComponent
+        UpdateUserComponent,
+        NavigationPageComponent,
+        UserEditDialogComponent,
+        FeaturePageComponent,
+        CreateFeatureComponent,
+        UpdateFeatureComponent,
+        FeatureEditDialogComponent,
+        CompanyEditDialogComponent,
+        ProjectEditDialogComponent,
     ],
     imports: [
         BrowserModule,
@@ -66,8 +87,11 @@ import {MatMenuModule} from '@angular/material/menu';
         MatTooltipModule,
         MatToolbarModule,
         MatMenuModule,
+        MatSidenavModule,
+        MatSelectModule,
     ],
-    providers: [HttpClient, CompanyService, ProjectService, UserService, Location],
+    
+    providers: [HttpClient, CompanyService, ProjectService, UserService, Location, FeatureService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

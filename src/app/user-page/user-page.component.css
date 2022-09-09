@@ -1,16 +1,33 @@
-table {
-    width: 800px;
+table{
+ width: 1000px;
 }
 
 .add-user-button {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .cursor-pointer:hover {
-    text-decoration: underline;
-    cursor: pointer;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-.spacer {
-    flex: 1 1 auto;
+/* .spacer {
+  flex: 1 1 auto;
+} */
+
+/* div mat-toolbar {
+  box-shadow: 0px 2px 3px 0px rgb(0 0 0 / 30%);
+  padding: 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100% !important;
+} */
+
+@media screen and (max-width: 992px) {
+    table {   
+      width: 100%;
+    }
   }

@@ -1,10 +1,11 @@
+import { FormControl, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { Observable } from 'rxjs';
 import { User } from '../model/user';
 import { UserService } from '../service/user-service';
 import { RemoveDialogUserComponent } from './dialog/remove-dialog-user/remove-dialog-user.component';
+import { UserEditDialogComponent } from './dialog/user-edit-dialog/user-edit-dialog.component';
 
 @Component({
   selector: 'app-user-page',
@@ -18,11 +19,16 @@ export class UserPageComponent implements OnInit {
     'lastName',
     'email',
     'remove',
+    'openNewTab',
   ];
   users: User[];
   dataSource: MatTableDataSource<User>;
 
-  constructor(private userService: UserService, private dialog: MatDialog) {}
+  constructor(
+    private userService: UserService,
+    private dialog: MatDialog,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.getUsers();
@@ -55,6 +61,39 @@ export class UserPageComponent implements OnInit {
             this.dataSource._updateChangeSubscription();
           },
           () => console.log('User was not removed')
+        );
+      }
+    });
+  }
+
+  openNewTab(data: User) {
+    const userUrl = '/user/' + data.id + '/update';
+    window.open(userUrl);
+  }
+
+  openUserEditDialog(user: User): void {
+    const formControlGroup = this.formBuilder.group({
+      firstName: new FormControl(user.firstName),
+      lastName: new FormControl(user.lastName),
+      email: new FormControl(user.email),
+    });
+    const dialogRef = this.dialog.open(UserEditDialogComponent, {
+      data: {
+        formControlGroup,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((data) => {
+      console.log(' Dialog closed ');
+      if (data != null) {
+        user.firstName = data.formControlGroup.controls['firstName'].value;
+        user.lastName = data.formControlGroup.controls['lastName'].value;
+        user.email = data.formControlGroup.controls['email'].value;
+        this.userService.update(user).subscribe(
+          () => {
+            console.log('User was updated');
+          },
+          () => console.log('User was not updated')
         );
       }
     });

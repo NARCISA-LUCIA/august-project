@@ -1,0 +1,12 @@
+table{
+    width: 1000px;
+   }
+   
+   .add-user-button {
+     margin-bottom: 5px;
+   }
+   
+   .cursor-pointer:hover {
+     text-decoration: underline;
+     cursor: pointer;
+   }

@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -10,6 +11,10 @@ import { CreateProjectComponent } from './project-page/create-project/create-pro
 import { UpdateProjectComponent } from './project-page/update-project/update-project.component';
 import { CreateUserComponent } from './user-page/create-user/create-user.component';
 import { UpdateUserComponent } from './user-page/update-user/update-user.component';
+import { NavigationPageComponent } from './navigation-page/navigation-page.component';
+import { FeaturePageComponent } from './feature-page/feature-page.component';
+import { UpdateFeatureComponent } from './feature-page/update-feature/update-feature.component';
+import { CreateFeatureComponent } from './feature-page/create-feature/create-feature.component';
 
 const routes: Routes = [
   { path: 'company/create', component: CreateCompanyComponent },
@@ -21,6 +26,10 @@ const routes: Routes = [
   { path: 'user', component: UserPageComponent },
   { path: 'user/create', component: CreateUserComponent },
   { path: 'user/:id/update', component: UpdateUserComponent },
+  { path: 'navigation', component: NavigationPageComponent },
+  { path: 'feature', component: FeaturePageComponent },
+  { path: 'feature/create', component: CreateFeatureComponent },
+  { path: 'feature/:id/update', component: UpdateFeatureComponent },
 ];
 
 @NgModule({

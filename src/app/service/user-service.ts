@@ -24,6 +24,12 @@ export class UserService {
     return this.httpClient.get<User[]>(url);
   }
 
+  getAllUsersByCompanyIdAndProjectId(companyId: number, projectId: number): Observable<User[]> {
+    console.log('hear...')
+    const url = '/api/user/company/' + companyId + '/project/' + projectId;
+    return this.httpClient.get<User[]>(url);
+  }
+
   update(user: User): Observable<User> {
     let headerList = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.httpClient.put<User>('/api/user', user, {

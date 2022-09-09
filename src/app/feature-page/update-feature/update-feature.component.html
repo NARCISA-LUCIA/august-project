@@ -1,0 +1,26 @@
+<div class="form-box">
+    <h1>Update Feature</h1>
+    <div class="form" [formGroup]="formControlGroup">
+        <mat-form-field class="form-width" appearance="legacy">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="" formControlName="title">
+            <mat-icon matSuffix>account_circle</mat-icon>
+        </mat-form-field>
+    </div>
+    <div class="form" [formGroup]="formControlGroup">
+        <mat-form-field class="form-width" appearance="legacy">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="" formControlName="description">
+            <mat-icon matSuffix>account_circle</mat-icon>
+        </mat-form-field>
+    </div>
+    <div class = "buttons">
+    <div class="button-update-feature">
+        <button mat-raised-button (click) = "updateFeature()">Update Feature</button>
+    </div>
+    <div class="button-back-feature">
+        <button mat-raised-button (click) = "goBack()">Back</button>
+    </div>
+    </div>
+</div>
+

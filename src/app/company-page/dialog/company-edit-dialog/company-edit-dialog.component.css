@@ -1,0 +1,28 @@
+.button-box-remove {
+    display: flex;
+    gap: 20px;
+  }
+  
+  button.mat-raised-button {
+    width: 100px;
+    padding: 4px;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  textarea.mat-input-element {
+    resize: none;
+    height: 150px;
+  }
+  
+  .container-form{
+    display: flex;
+    gap:20px;
+  }
